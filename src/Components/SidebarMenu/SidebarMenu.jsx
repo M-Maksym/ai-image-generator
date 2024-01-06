@@ -1,8 +1,11 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function SidebarMenu() {
   return (
-    <div>SidebarMenu</div>
+    <div className='container-fluid'>
+
+    </div>
   )
 }
 
