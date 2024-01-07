@@ -20,15 +20,14 @@ const ImageGenerator = () => {
                     headers:{
                         "Content-Type":"application/json",
                         Authorization:
-                        "Bearer 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",
+                        "Bearer sk-9YOUR_TOKEN",
                         "User-Agent":"Chrome",
                     },
                     body: JSON.stringify({
                         prompt:`${inputRef.current.value}`,
                         n:1,
                         size:"512x512",
-                    }),
-                   
+                    }),                   
                 }
             );
             let data = await response.json();
