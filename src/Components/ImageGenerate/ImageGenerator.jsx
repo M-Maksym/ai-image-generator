@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react'
 import './ImageGenerator.css'
 import default_image from '../Assets/default_image.jpg'
+import { useDispatch } from "react-redux"
+import { addToHistory } from '../../features/slices/historySlice'
 
 const ImageGenerator = () => {
 
     const [image_url, setImage_url] = useState("/");
     let inputRef = useRef(null);
     const [loading, setLoading] = useState(false);
+
+    const dispatch = useDispatch();
 
     const ImageGenerator = async () => {
         if(inputRef.current.value===""){
@@ -20,7 +24,7 @@ const ImageGenerator = () => {
                     headers:{
                         "Content-Type":"application/json",
                         Authorization:
-                        "Bearer sk-9YOUR_TOKEN",
+                        "Bearer YOUR_TOKEN",
                         "User-Agent":"Chrome",
                     },
                     body: JSON.stringify({
@@ -32,8 +36,14 @@ const ImageGenerator = () => {
             );
             let data = await response.json();
             let data_array = data.data;
+            console.log(data_array);
             setImage_url(data_array[0].url); 
-            setLoading(false);       
+            setLoading(false);
+            dispatch(addToHistory({
+                url: data_array[0].url,
+                text: `${inputRef.current.value}`,
+            }));
+            console.log(`prompt: ${inputRef.current.value}`);
     } 
 
   return (

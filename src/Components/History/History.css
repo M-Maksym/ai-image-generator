@@ -1,0 +1,24 @@
+.list{
+    display: column;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+
+.history{
+    margin-top: 20px;
+    width: 650px;
+    height: 650px;
+    background-color: #1F3844;
+    border-radius: 15px;
+}
+.history-text{
+    font-size: xx-large;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.title{
+    font-size: 50px;
+    font-weight: 500;
+}

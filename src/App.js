@@ -1,7 +1,7 @@
 import './App.css';
 import History from './Components/History/History';
 import ImageGenerator from './Components/ImageGenerate/ImageGenerator';
-import { BrowserRouter, Outlet, Route, Routes, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 
 const AppLayout = () => (
