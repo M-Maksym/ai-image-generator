@@ -15,12 +15,6 @@ export const SidebarData = [
         icons: <IoIcons.IoIosAlarm />,
         cName: 'nav-text',
     },
-    {
-        title: 'Account',
-        path: '/account',
-        icons: <IoIcons.IoIosBody />,
-        cName: 'nav-text',
-    },
 
 
 ]

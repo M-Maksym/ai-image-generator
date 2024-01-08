@@ -12,6 +12,14 @@ const ImageGenerator = () => {
 
     const dispatch = useDispatch();
 
+    const getDate = () => {
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${month}/${date}/${year}`;
+      }
+
     const ImageGenerator = async () => {
         if(inputRef.current.value===""){
             return 0;
@@ -42,6 +50,7 @@ const ImageGenerator = () => {
             dispatch(addToHistory({
                 url: data_array[0].url,
                 text: `${inputRef.current.value}`,
+                date: getDate(),
             }));
             console.log(`prompt: ${inputRef.current.value}`);
     } 
@@ -61,7 +70,7 @@ const ImageGenerator = () => {
             </div>
         </div>
         <div className="search-box">
-            <input type="text" ref={inputRef} className='search-input' placeholder='Describe what you want to see' />
+            <input type="text" ref={inputRef} className='search-input' placeholder='Describe what you want to see' name='place for prompt'/>
             <div className="generate-btn" onClick={()=>{ImageGenerator()}}>Generate</div>
         </div>
     </div>

@@ -11,13 +11,20 @@ function History() {
     {history.totalAmount > 0 ?    
     <div className='list'>
         <div className='title'>
-            History
+            History 
         </div>
+        <div className='generated-total'>
+        Generated a total of {history.totalAmount} images 
+        </div>
+        
         {history.history.map((item, index) =>{
             return(
                 <div className='history' key={index}>
                     <div className='history-text'>
                         {item.text}
+                    </div>
+                    <div className='history-date'>
+                        {item.date}
                     </div>
                     <div className='history-image'>
                         <img src={item.url} alt="h" />
